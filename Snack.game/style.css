@@ -1,0 +1,94 @@
+body {
+  margin: 0; /* Remove margem padrão do navegador */
+}
+
+.game-canvas {
+  width: 100%;          /* O canvas ocupa toda a largura disponível */
+  height: 100vw;        /* Altura proporcional à largura da tela (viewport) */
+  max-width: 500px;     /* Limita o tamanho máximo do canvas */
+  max-height:500px;     /* Limita a altura máxima */
+  margin-left: auto;    /* Centraliza horizontalmente */
+  margin-right: auto;   /* Centraliza horizontalmente */
+}
+
+.keys {
+  font-family: 'Lato', sans-serif; /* Fonte dos botões */
+  text-align: center;              /* Centraliza os botões */
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; /* Inclui padding dentro do tamanho total */
+  height: 200px;
+  margin: auto;
+}
+
+.up {
+  position: relative;
+  top: -4px; /* Sobe um pouquinho o botão da seta para alinhar melhor */
+}
+
+/* Criação das setas com bordas (pseudoelemento) */
+.chevron::before {
+  border-style: solid;
+  border-width: 8px 8px 0 0; /* Bordas para formar a ponta da seta */
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  top: -10px;
+  position: relative;
+  transform: rotate(-45deg); /* Gira para parecer seta apontando para cima */
+}
+
+/* Diferentes direções das setas */
+.chevron.down::before {
+  transform: rotate(135deg);
+  top: -22px;
+}
+
+.chevron.right::before {
+  transform: rotate(45deg);
+  top: -18px;
+  left: -5px;
+}
+
+.chevron.left::before {
+  transform: rotate(225deg);
+  top: -18px;
+  left: 5px;
+}
+
+/* Estilização dos botões (setas) */
+.arr {
+  cursor: pointer;                 /* Cursor de mãozinha */
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  line-height: 100px;
+  background: gray;                /* Cor de fundo padrão */
+  color: white;                    /* Cor do símbolo da seta */
+  font-size: 50px;
+  
+  /* Efeito 3D (bordas com tons diferentes) */
+  border-right: 10px solid #ccc;
+  border-bottom: 10px solid #ccc;
+  border-left: 10px solid #ddd;
+  border-top: 10px solid #eee;
+
+  display: inline-block;
+  margin: 5px;
+  transition: all .05s linear;     /* Animação rápida ao clicar */
+  user-select: none;               /* Impede de selecionar texto ao clicar */
+}
+
+/* Efeito ao pressionar o botão */
+.arr:active {
+  background: #555; /* Fica mais escuro */
+}
+
+/* Container geral do jogo */
+#game-container {
+  display: flex;
+  flex-direction: column;                 /* Organiza elementos em coluna */
+  background-color: rgba(220, 220, 220, 0.6); /* Fundo cinza claro translúcido */
+}
+
