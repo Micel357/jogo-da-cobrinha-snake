@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"> <!-- Define o padrão de caracteres (UTF-8), essencial para acentos e caracteres especiais -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Faz o layout se ajustar em telas menores, tipo celular -->
+	<title>Snake Game</title> <!-- Título que aparece na aba do navegador -->
+	<link rel="stylesheet" href="src/style.css"> <!-- Importa o arquivo CSS para estilizar o jogo -->
+</head>
+<body>
+	<div id="game-container"> <!-- Container principal do jogo -->
+		<canvas id="gc" class="game-canvas" width="400" height="400"></canvas> 
+		<!-- O "canvas" é onde o jogo vai ser desenhado (a cobra, comida etc.) -->
+	</div>
+	
+	<div class="keys"> <!-- Botões de controle do jogo (setas) -->
+	  <!-- Cada botão chama uma função de ação no objeto Snake, passando a direção -->
+	  <a class="up arr" onclick="Snake.action('up')">
+	    <i class="chevron up"></i></a>
+	  <br />
+	  <a class="left arr" onclick="Snake.action('left')">
+	    <i class="chevron left"></i></a>
+	  <a class="down arr" onclick="Snake.action('down')">
+	    <i class="chevron down"></i></a>
+	  <a class="right arr" onclick="Snake.action('right')">
+	    <i class="chevron right"></i></a>
+	</div>
+
+	<!-- Importa o arquivo JavaScript que tem a lógica do jogo -->
+	<script type="text/javascript" src="src/game.js"></script>
+</body>
+</html>
